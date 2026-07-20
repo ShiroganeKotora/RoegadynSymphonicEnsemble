@@ -30,19 +30,56 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Song filter (songs.html only)
-  const filterBar = document.querySelector('.filter-bar');
+  // Song metadata — split "label：value" into a two-line catalog treatment.
+  document.querySelectorAll('.song-row__meta').forEach(meta => {
+    const separatorIndex = meta.textContent.indexOf('：');
+    if (separatorIndex === -1) return;
+
+    const label = document.createElement('span');
+    label.className = 'song-row__meta-label';
+    label.textContent = meta.textContent.slice(0, separatorIndex);
+
+    const value = document.createElement('span');
+    value.className = 'song-row__meta-value';
+    value.textContent = meta.textContent.slice(separatorIndex + 1);
+
+    meta.replaceChildren(label, value);
+  });
+
+  // Song filter (songs.html only) — two independent tiers: type + formation
   const songRows = document.querySelectorAll('.song-row');
-  if (filterBar && songRows.length) {
-    filterBar.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const category = btn.dataset.filter;
+  const typeButtons = document.querySelectorAll('.filter-btn[data-filter-type]');
+  const formationButtons = document.querySelectorAll('.filter-btn[data-filter-formation]');
+
+  if (songRows.length && (typeButtons.length || formationButtons.length)) {
+    let activeType = 'all';
+    let activeFormation = 'all';
+
+    const applyFilters = () => {
       songRows.forEach(row => {
-        const match = category === 'all' || row.dataset.category === category;
-        row.style.display = match ? '' : 'none';
+        const types = (row.dataset.type || '').split(' ');
+        const formations = (row.dataset.formation || '').split(' ');
+        const typeMatch = activeType === 'all' || types.includes(activeType);
+        const formationMatch = activeFormation === 'all' || formations.includes(activeFormation);
+        row.style.display = (typeMatch && formationMatch) ? '' : 'none';
+      });
+    };
+
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        typeButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeType = btn.dataset.filterType;
+        applyFilters();
+      });
+    });
+
+    formationButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formationButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeFormation = btn.dataset.filterFormation;
+        applyFilters();
       });
     });
   }

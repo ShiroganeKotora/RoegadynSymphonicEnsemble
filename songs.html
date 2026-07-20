@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>楽曲紹介 | ROEGADYN SYMPHONIC ENSEMBLE</title>
-<link rel="icon" href="assets/img/icon.png">
+<link rel="icon" href="assets/img/favicon-r.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,6 +26,9 @@
     <a href="history.html">年表史</a>
     <a href="members.html">メンバー</a>
     <a href="songs.html" aria-current="page">楽曲紹介</a>
+    <a href="https://x.com/Roegatet" class="nav__social" target="_blank" rel="noopener" aria-label="X（旧Twitter）">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
   </nav>
 </header>
 
@@ -41,58 +44,356 @@
 
   <section class="section section--tight">
     <div class="filter-bar">
-      <button class="filter-btn is-active" data-filter="all">すべて</button>
-      <button class="filter-btn" data-filter="original">オリジナル</button>
-      <button class="filter-btn" data-filter="cover">カバー</button>
-      <button class="filter-btn" data-filter="classical">クラシック</button>
+      <button class="filter-btn is-active" data-filter-type="all">すべて</button>
+      <button class="filter-btn" data-filter-type="original">オリジナル</button>
+      <button class="filter-btn" data-filter-type="arrange">アレンジ</button>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn is-active" data-filter-formation="all">すべて</button>
+      <button class="filter-btn" data-filter-formation="strings">弦楽</button>
+      <button class="filter-btn" data-filter-formation="sextet">六重奏</button>
+      <button class="filter-btn" data-filter-formation="octet">八重奏</button>
+      <button class="filter-btn" data-filter-formation="nonet">九重奏</button>
     </div>
 
-    <div class="panel">
+    <div class="panel panel--narrow">
       <div class="song-list">
-
-        <div class="song-row reveal" data-category="original">
-          <span class="song-row__index">01</span>
+        <div class="song-row reveal" data-type="arrange" data-formation="strings sextet octet nonet">
           <div>
-            <p class="song-row__title">楽曲タイトル 未設定</p>
-            <p class="song-row__meta">作曲：未設定 ／ 初演：20XX年</p>
+            <span class="song-row__index">001</span>
+            <p class="song-row__title">Final Fantasy のテーマ</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：Final Fantasy 関連作品</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
           </div>
-          <span class="song-row__tag">オリジナル</span>
+          <div class="song-row__tags">
+            <span class="song-row__tag">アレンジ</span>
+            <span class="song-row__tag song-row__tag--formation">弦楽</span>
+            <span class="song-row__tag song-row__tag--formation">六重奏</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
         </div>
 
-        <div class="song-row reveal" data-category="cover">
-          <span class="song-row__index">02</span>
+        <div class="song-row reveal" data-type="arrange" data-formation="sextet octet nonet">
           <div>
-            <p class="song-row__title">楽曲タイトル 未設定</p>
-            <p class="song-row__meta">原曲：未設定 ／ 編曲：未設定</p>
+            <span class="song-row__index">002</span>
+            <p class="song-row__title">セイレーンの歌声 per "ナナシノテエマ"</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：プリンセスデー</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
           </div>
-          <span class="song-row__tag">カバー</span>
+          <div class="song-row__tags">
+            <span class="song-row__tag">アレンジ</span>
+            <span class="song-row__tag song-row__tag--formation">六重奏</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
         </div>
 
-        <div class="song-row reveal" data-category="classical">
-          <span class="song-row__index">03</span>
+        <div class="song-row reveal" data-type="original" data-formation="sextet octet nonet">
           <div>
-            <p class="song-row__title">楽曲タイトル 未設定</p>
-            <p class="song-row__meta">作曲：未設定 ／ 演目：未設定</p>
+            <span class="song-row__index">003</span>
+            <p class="song-row__title">ビッグブリッジの死闘</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：ギルガメッシュ討伐戦関連</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
           </div>
-          <span class="song-row__tag">クラシック</span>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">六重奏</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
         </div>
 
-        <div class="song-row reveal" data-category="original">
-          <span class="song-row__index">04</span>
+        <div class="song-row reveal" data-type="arrange" data-formation="octet nonet">
           <div>
-            <p class="song-row__title">楽曲タイトル 未設定</p>
-            <p class="song-row__meta">作曲：未設定 ／ 初演：20XX年</p>
+            <span class="song-row__index">004</span>
+            <p class="song-row__title">エミール／犠牲 quasi "絶望"</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：YoRHa: Dark Apocalypse - 希望ノ砲台：「塔」</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
           </div>
-          <span class="song-row__tag">オリジナル</span>
+          <div class="song-row__tags">
+            <span class="song-row__tag">アレンジ</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
         </div>
 
-        <div class="song-row reveal" data-category="cover">
-          <span class="song-row__index">05</span>
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
           <div>
-            <p class="song-row__title">楽曲タイトル 未設定</p>
-            <p class="song-row__meta">原曲：未設定 ／ 編曲：未設定</p>
+            <span class="song-row__index">005</span>
+            <p class="song-row__title">空より現われし者</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：次元の狭間オメガ零式：アルファ編４層後半</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
           </div>
-          <span class="song-row__tag">カバー</span>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">006</span>
+            <p class="song-row__title">Scream</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：万魔殿パンデモニウム：煉獄編２－３層</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="strings octet nonet">
+          <div>
+            <span class="song-row__index">007</span>
+            <p class="song-row__title">Prelude</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：Final Fantasy 関連作品</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">弦楽</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">008</span>
+            <p class="song-row__title">塩と苦難の歌</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：ギラバニア湖畔地帯：昼</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">009</span>
+            <p class="song-row__title">Flow</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：暁月のフィナーレ　メインクエスト：すべての子らよ</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="arrange" data-formation="">
+          <div>
+            <span class="song-row__index">010</span>
+            <p class="song-row__title">弦楽八重奏：「星芒の歌」の主題による変奏曲</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：星芒祭</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">アレンジ</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">011</span>
+            <p class="song-row__title">塩と苦難の歌</p>
+            <p class="song-row__meta">制作：2023年</p>
+            <p class="song-row__meta">出典：ギラバニア湖畔地帯：昼</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original arrange" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">012</span>
+            <p class="song-row__title">メビウス　～　機工城アレキサンダー</p>
+            <p class="song-row__meta">制作：2024年</p>
+            <p class="song-row__meta">出典：機工城アレキサンダー：天動編４層</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag">アレンジ</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">013</span>
+            <p class="song-row__title">終わりなき軌跡</p>
+            <p class="song-row__meta">制作：2024年</p>
+            <p class="song-row__meta">出典：記憶幻想　アレクサンドリア</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">014</span>
+            <p class="song-row__title">カイネ／Final Fantasy Main Theme Version</p>
+            <p class="song-row__meta">制作：2025年</p>
+            <p class="song-row__meta">出典：YoRHa: Dark Apocalypse - 希望ノ砲台：「塔」</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original arrange" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">015</span>
+            <p class="song-row__title">Roses of May ( Dawntrail ~ Origin )</p>
+            <p class="song-row__meta">制作：2025年</p>
+            <p class="song-row__meta">出典：ゼレニア討滅戦</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag">アレンジ</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">016</span>
+            <p class="song-row__title">第七星暦</p>
+            <p class="song-row__meta">制作：2025年</p>
+            <p class="song-row__meta">出典：新生エオルゼア　メインクエスト：究極幻想アルテマウェポン</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">017</span>
+            <p class="song-row__title">Give It All</p>
+            <p class="song-row__meta">制作：2025年</p>
+            <p class="song-row__meta">出典：至天の座アルカディア：ライトヘビー級４層</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="" data-formation="">
+          <div>
+            <span class="song-row__index">018</span>
+            <p class="song-row__title">『ハイデリン・ゾディアーク編』メドレー ～ 星と旅路の物語</p>
+            <p class="song-row__meta">制作：2025年</p>
+            <p class="song-row__meta">出典：多数のため楽曲のみ掲載</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+            <details class="song-row__medley">
+              <summary>メドレー内訳を見る</summary>
+              <div class="song-row__medley-content">
+                <div class="song-row__medley-group">
+                  <h4>新生</h4>
+                  <ul>
+                    <li>第七星暦</li>
+                    <li>神なき世界</li>
+                    <li>天より降りし力</li>
+                  </ul>
+                </div>
+                <div class="song-row__medley-group">
+                  <h4>蒼天</h4>
+                  <ul>
+                    <li>Heavensward</li>
+                    <li>邪竜の急襲</li>
+                    <li>英傑</li>
+                  </ul>
+                </div>
+                <div class="song-row__medley-group">
+                  <h4>紅蓮</h4>
+                  <ul>
+                    <li>龍の首</li>
+                    <li>エスケープ</li>
+                    <li>紅の夜更け</li>
+                  </ul>
+                </div>
+                <div class="song-row__medley-group">
+                  <h4>漆黒</h4>
+                  <ul>
+                    <li>美しき思い出</li>
+                    <li>消せない約束</li>
+                    <li>砕けぬ思い</li>
+                    <li>死の刻</li>
+                  </ul>
+                </div>
+                <div class="song-row__medley-group">
+                  <h4>暁月</h4>
+                  <ul>
+                    <li>ENDCALLER</li>
+                    <li>創造の奇跡</li>
+                    <li>先行く星々</li>
+                    <li>終焉の戦い</li>
+                    <li>想いが動かす力</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
+        </div>
+
+        <div class="song-row reveal" data-type="original" data-formation="octet nonet">
+          <div>
+            <span class="song-row__index">019</span>
+            <p class="song-row__title">The Extreme</p>
+            <p class="song-row__meta">制作：2026年</p>
+            <p class="song-row__meta">出典：希望の園のエデン：再生編４層後半</p>
+            <p class="song-row__meta">演奏時間：0:00</p>
+          </div>
+          <div class="song-row__tags">
+            <span class="song-row__tag">オリジナル</span>
+            <span class="song-row__tag song-row__tag--formation">八重奏</span>
+            <span class="song-row__tag song-row__tag--formation">九重奏</span>
+          </div>
         </div>
 
       </div>
