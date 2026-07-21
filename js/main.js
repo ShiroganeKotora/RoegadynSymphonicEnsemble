@@ -30,8 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
+  // Song metadata — keep the source as an explicit <br>-separated field.
+  document.querySelectorAll('.song-row > div:first-child').forEach(details => {
+    const source = details.querySelector('.song-row__meta:nth-of-type(3)');
+    if (!source) return;
+
+    const separatorIndex = source.textContent.indexOf('：');
+    if (separatorIndex === -1) return;
+
+    const label = source.textContent.slice(0, separatorIndex + 1);
+    const value = source.textContent.slice(separatorIndex + 1).trim();
+    source.classList.add('song-row__meta--source');
+    source.replaceChildren(label, document.createElement('br'), value);
+  });
+
   // Song metadata — split "label：value" into a two-line catalog treatment.
-  document.querySelectorAll('.song-row__meta').forEach(meta => {
+  document.querySelectorAll('.song-row__meta:not(.song-row__meta--source)').forEach(meta => {
     const separatorIndex = meta.textContent.indexOf('：');
     if (separatorIndex === -1) return;
 

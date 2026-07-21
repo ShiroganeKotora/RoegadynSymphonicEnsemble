@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&amp;display=swap');
-    </style>
-
     <radialGradient id="bg" cx="50%" cy="35%" r="80%">
       <stop offset="0%" stop-color="#0a1f14"/>
       <stop offset="60%" stop-color="#050f0a"/>
@@ -31,6 +27,8 @@
       <stop offset="58%" stop-color="#d4af37"/>
       <stop offset="100%" stop-color="#8a6a1f"/>
     </linearGradient>
+
+    <path id="glyph-r" d="M48.87 49.322L39.541 49.322C37.476 46.083 35.61 43.283 33.944 40.923C32.277 38.563 30.468 36.13 28.517 33.624L24.969 33.624L24.969 44.61C24.969 45.18 25.058 45.68 25.237 46.111C25.416 46.543 25.799 46.872 26.385 47.1C26.678 47.214 27.19 47.32 27.923 47.417C28.655 47.515 29.274 47.572 29.778 47.588L29.778 49.322L15.13 49.322L15.13 47.588C15.521 47.556 16.086 47.499 16.827 47.417C17.567 47.336 18.084 47.23 18.377 47.1C18.865 46.889 19.219 46.579 19.439 46.172C19.659 45.765 19.769 45.245 19.769 44.61L19.769 19.561C19.769 18.991 19.687 18.487 19.524 18.047C19.362 17.608 18.979 17.274 18.377 17.046C17.97 16.9 17.441 16.766 16.79 16.644C16.139 16.521 15.586 16.444 15.13 16.412L15.13 14.678L31.121 14.678C32.586 14.678 33.961 14.829 35.247 15.13C36.533 15.431 37.697 15.915 38.738 16.583C39.747 17.234 40.553 18.084 41.155 19.134C41.757 20.184 42.059 21.449 42.059 22.93C42.059 24.265 41.855 25.445 41.448 26.47C41.041 27.496 40.439 28.383 39.642 29.131C38.909 29.831 38.03 30.438 37.005 30.95C35.979 31.463 34.848 31.898 33.611 32.256C35.32 34.519 36.74 36.423 37.872 37.969C39.003 39.515 40.39 41.395 42.034 43.609C42.75 44.585 43.397 45.306 43.975 45.77C44.553 46.233 45.127 46.612 45.696 46.905C46.119 47.116 46.648 47.279 47.283 47.393C47.918 47.507 48.447 47.572 48.87 47.588ZM36.028 23.505C36.028 21.409 35.426 19.747 34.222 18.52C33.017 17.294 31.316 16.68 29.119 16.68L24.969 16.68L24.969 31.524L28.167 31.524C30.413 31.524 32.285 30.805 33.782 29.367C35.28 27.929 36.028 25.975 36.028 23.505Z"/>
   </defs>
 
   <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="url(#bg)"/>
@@ -38,12 +36,6 @@
   <rect x="3" y="3" width="58" height="58" rx="14" fill="none" stroke="url(#frame)" stroke-width="2.6"/>
   <rect x="5.4" y="5.4" width="53.2" height="53.2" rx="11.5" fill="none" stroke="url(#frameInner)" stroke-width="1.1"/>
 
-  <text x="32.6" y="28.5" text-anchor="middle" dominant-baseline="central"
-        font-family="'Playfair Display', Didot, Georgia, 'Times New Roman', serif"
-        font-style="normal" font-weight="400" font-size="50"
-        fill="#3a2c0d" opacity="0.65">R</text>
-  <text x="32" y="27.5" text-anchor="middle" dominant-baseline="central"
-        font-family="'Playfair Display', Didot, Georgia, 'Times New Roman', serif"
-        font-style="normal" font-weight="400" font-size="50"
-        fill="url(#gold)">R</text>
+  <use href="#glyph-r" transform="translate(0.6 1)" fill="#3a2c0d" opacity="0.65"/>
+  <use href="#glyph-r" fill="url(#gold)"/>
 </svg>

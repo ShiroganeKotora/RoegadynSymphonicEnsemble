@@ -505,6 +505,15 @@ body{
 }
 @media (max-width: 620px){
   .grid--2, .grid--3, .grid--4{ grid-template-columns: 1fr; }
+  .upcoming-event{ text-align: center; gap: 38px; }
+  .upcoming-event > div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .upcoming-event .section__title{ margin-left: auto; margin-right: auto; }
+  .intro-cards .card{ text-align: center; }
+  .explore-cards .card{ text-align: center; }
 }
 
 /* reveal-on-scroll */
@@ -723,6 +732,25 @@ body{
 .timeline-item__external-link:focus-visible{ outline: 2px solid var(--cream); outline-offset: 3px; }
 .timeline-item__external-link-icon{ font-size: 15px; line-height: 0; }
 
+/* History page: independently editable desktop and mobile timelines. */
+.mobile-section{ display: none; }
+
+@media (max-width: 620px){
+  .desktop-section{ display: none; }
+  .mobile-section{
+    display: block;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 100px 24px;
+  }
+  .timeline{
+    padding-left: 50px;
+    padding-right: 15px;
+  }
+  .timeline::before{ left: 18px; }
+  .timeline-item::before{ left: -37.5px; }
+}
+
 /* --------------------------------------------------------------- members */
 .member-card{
   text-align: center;
@@ -876,11 +904,13 @@ body{
 }
 .song-row__title{
   grid-column: 1 / -1;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: clamp(22px, 2.4vw, 28px);
   font-weight: 600;
   color: var(--cream);
   line-height: 1.35;
+  overflow-wrap: anywhere;
   margin: 0 0 18px;
 }
 .song-row__meta{
@@ -918,6 +948,23 @@ body{
   min-width: 0;
   order: 3;
 }
+.song-row__meta--source{
+  color: rgba(244,236,216,0.9);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.song-row__meta--source::first-line{
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.song-row__meta:nth-of-type(3) .song-row__meta-value{
+  overflow-wrap: anywhere;
+}
 .song-row__tags{
   display: flex;
   flex-wrap: wrap;
@@ -945,10 +992,15 @@ body{
   .song-row{
     padding: 24px 20px;
   }
-  .song-row > div:first-child{ grid-template-columns: 1fr; gap: 10px; }
-  .song-row__meta:nth-of-type(2),
-  .song-row__meta:nth-of-type(3),
+  .song-row > div:first-child{
+    /* Flexible last track lets the spanning title use the full card width. */
+    grid-template-columns: max-content max-content minmax(0, 1fr);
+    column-gap: clamp(28px, 12vw, 56px);
+    row-gap: 12px;
+  }
   .song-row__meta:nth-of-type(4){ grid-column: 1; }
+  .song-row__meta:nth-of-type(2){ grid-column: 2; }
+  .song-row__meta:nth-of-type(3){ grid-column: 1 / -1; }
   .song-row__title{ margin-bottom: 14px; }
   .song-row__tags{ margin-top: 20px; padding-top: 16px; }
 }
