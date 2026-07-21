@@ -57,6 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     value.className = 'song-row__meta-value';
     value.textContent = meta.textContent.slice(separatorIndex + 1);
 
+    if (label.textContent === '演奏時間' && value.textContent.startsWith('約')) {
+      const approximate = document.createElement('span');
+      approximate.className = 'song-row__duration-prefix';
+      approximate.textContent = '約';
+      value.replaceChildren(approximate, value.textContent.slice(1));
+    }
+
     meta.replaceChildren(label, value);
   });
 

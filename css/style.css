@@ -933,6 +933,12 @@ body{
   line-height: 1.65;
   font-variant-numeric: lining-nums tabular-nums;
 }
+.song-row__duration-prefix{
+  display: inline-block;
+  margin-right: 0.18em;
+  font-size: 0.75em;
+  vertical-align: 0.08em;
+}
 .song-row__meta:nth-of-type(4){
   grid-column: 1;
   order: 1;
